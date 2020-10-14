@@ -1,0 +1,24 @@
+anfang
+
+funktion haupt ()
+{
+    var i32 x = 2;
+    var i32 y = 3;
+
+    var i32 z;
+    z = x + y;
+    
+    output z;
+
+
+}
+
+
+
+
+
+
+
+
+
+end
