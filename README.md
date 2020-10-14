@@ -1,3 +1,3 @@
-# Das Erika
+# Erika
 
-This repository is a compiler for das Erika language. 
+This repository is a compiler for Erika language. 
