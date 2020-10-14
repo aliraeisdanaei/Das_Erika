@@ -6,7 +6,7 @@ This is the grammar for the erika language.
 
 <pre>
 "if"    "elif"  "else"
-"while" "return" 
+"while" "return" "output"
 "{"     "}"
 "("     ")"
 ";"     ","
@@ -16,16 +16,19 @@ This is the grammar for the erika language.
 "funktion"      "haupt"
 "anfang"        "end"
 
-IDENTIFIER      INT_LITERAL     STR_LITERAL
+IDENTIFIER      INT_LITERAL
 </pre>
 
 
 ## Grammar
 
-**S** -> anfang FUNKTION end
+**S** -> anfang FUNKTION MAINFUNKTION end
 
-**FUNKTION** -> MAINFUNKTION
-**MAINFUNKTION** -> funktion haupt (ARGUMENTS) { STATEMENT }
+**FUNKTION** -> funktion IDENTIFIER ( ARGUMENTS ) { STATEMENT } 
+| FUNKTION FUNKTION
+| e
+
+**MAINFUNKTION** -> funktion haupt ( ARGUMENTS ) { STATEMENT }
 
 **ARGUMENTS** -> 
 e 
@@ -42,6 +45,7 @@ if ( EXPRESSION ) { STATEMENTS }
 | return EXPRESSION;
 | VAR_DECLARATION; 
 | EXPRESSION;
+| output EXPRESSION;
 | STATEMENT STATEMENT
 
 **EXPRESSION** ->
@@ -56,6 +60,8 @@ INT_LITERAL
 | EXPRESSION / EXPRESSION
 | EXPRESSION & EXPRESSION
 | EXPRESSION | EXPRESSION
+| EXPRESSION == EXPRESSION
+
 
 
 

@@ -3,12 +3,10 @@ anfang
 funktion haupt ()
 {
     /* This is an example of a comment */
-    i32 x;
-    x = 72;
-    i32 y;
-    y = 3;
+    i32 x = 2;
+    i32 y = 3;
 
-    i32 z;
+    i32 i32;
     z = x + y;
     
     output z;
@@ -18,3 +16,4 @@ funktion haupt ()
 
 
 end
+
